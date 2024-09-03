@@ -6,14 +6,14 @@ public class OceanScroll : MonoBehaviour
 {
     [SerializeField] Transform _anotherOceans;
     [SerializeField] Transform _target;
-    [SerializeField] float _offsetZ;
-    
-    // Update is called once per frame
-    void Update()
+
+    private void OnTriggerEnter(Collider other)
     {
-        if(_target.transform.position.z >= transform.position.z + _offsetZ)
+        if (other.CompareTag("Player"))
         {
-            _anotherOceans.transform.position = new Vector3(0, 0, transform.position.z + transform.localScale.z * 10);
+            Vector3 pos = transform.parent.position;
+            pos.z += _anotherOceans.localScale.z * 10;
+            _anotherOceans.position = pos;
         }
     }
 }
