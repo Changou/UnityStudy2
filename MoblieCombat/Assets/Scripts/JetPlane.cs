@@ -1,4 +1,5 @@
 using Cinemachine;
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,6 +34,8 @@ public class JetPlane : JetHealth
     // Update is called once per frame
     void Update()
     {
+        if (!GameManager._Inst._isGameStart) return;
+
         if (_isTest)
             TestMove();
         else

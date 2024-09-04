@@ -15,6 +15,7 @@ public class ItemSpawnerManager : MonoBehaviour
     private void OnEnable()
     {
         StartCoroutine(SpawnItem());
+        StartCoroutine(SpawnCoin());
     }
 
     Vector3 RandomPos()
