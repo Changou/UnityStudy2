@@ -14,6 +14,7 @@ public class OceanScroll : MonoBehaviour
             Vector3 pos = transform.parent.position;
             pos.z += _anotherOceans.localScale.z * 10;
             _anotherOceans.position = pos;
+            _anotherOceans.GetComponent<Spawn>().SpawnObstalce();
         }
     }
 }

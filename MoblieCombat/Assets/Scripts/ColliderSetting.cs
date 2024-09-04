@@ -9,7 +9,7 @@ public class ColliderSetting : MonoBehaviour
     private void Update()
     {
         Vector3 pos = Vector3.zero;
-        pos.z = _target.position.z;
+        pos.z = _target.position.z + 3;
         pos.y = 14;
         transform.position = pos;
     }
