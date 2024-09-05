@@ -6,7 +6,7 @@ public class ColliderSetting : MonoBehaviour
 {
     [SerializeField] Transform _target;
 
-    private void Update()
+    private void FixedUpdate()
     {
         Vector3 pos = Vector3.zero;
         pos.z = _target.position.z + 3;

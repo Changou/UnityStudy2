@@ -9,16 +9,19 @@ public class JetPlane : JetHealth
 {
     [Header("기체 관련")]
     [SerializeField] float _speed;
+    [SerializeField] float _defaultSpeed;
     [SerializeField] public float _mMX;
     [SerializeField] public float _minY;
     [SerializeField] public float _maxY;
     [SerializeField] float _mMRZ;
     [SerializeField] float _mMRX;
     [SerializeField] Renderer _jetRenderer;
+    [SerializeField] ParticleSystem[] _jetEffects;
 
     [Header("테스트"), SerializeField] bool _isTest = false;
 
     Color _defaultColor;
+    public bool _onInvibility = false;
 
     private void Awake()
     {
@@ -28,18 +31,43 @@ public class JetPlane : JetHealth
     // Start is called before the first frame update
     void Start()
     {
+        _maxHaveMissile = _defaultMaxHave + (DataCentral._Inst._missileLV - 1);
+        _health = _defaultHP + (DataCentral._Inst._hpLV - 1);
+        _speed = _defaultSpeed + ((_defaultSpeed * 0.05f) * (DataCentral._Inst._speedLV - 1));
+
+        GameManager._Inst.StartGameFunc += () =>
+        {
+            foreach(ParticleSystem p in _jetEffects)
+            {
+                p.gameObject.SetActive(true);
+            }
+        };
+
         Input.gyro.enabled = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (!GameManager._Inst._isGameStart) return;
+        if(GameManager._Inst._startJetPos + GameManager._Inst._targetDist < transform.position.z &&
+            !GameManager._Inst._isGameOver)
+        {
+            GameManager._Inst.GameClear();
+        }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        if (GameManager._Inst._isGameOver) return;
 
         if (_isTest)
             TestMove();
         else
             GyroMove();
+
+        UIManager._Inst.UpdateSpeed((int)_speed);
+        UIManager._Inst.UpdateHp((int)_health);
+
         AutoMove();
     }
 
@@ -103,10 +131,10 @@ public class JetPlane : JetHealth
 
     IEnumerator InvicibilityOn(float time)
     { 
-        transform.GetComponent<Collider>().enabled = false;
+        _onInvibility = true;
         _jetRenderer.material.color = Color.yellow;
         yield return new WaitForSeconds(time);
         _jetRenderer.material.color = _defaultColor;
-        transform.GetComponent<Collider>().enabled = true;
+        _onInvibility = false;
     }
 }

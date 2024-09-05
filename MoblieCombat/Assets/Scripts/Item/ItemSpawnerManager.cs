@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,10 +13,14 @@ public class ItemSpawnerManager : MonoBehaviour
     [SerializeField] float _minOffset;
     [SerializeField] float _maxOffset;
 
-    private void OnEnable()
+
+    private void Start()
     {
-        StartCoroutine(SpawnItem());
-        StartCoroutine(SpawnCoin());
+        GameManager._Inst.StartGameFunc += () =>
+        {
+            StartCoroutine(SpawnItem());
+            StartCoroutine(SpawnCoin());
+        };
     }
 
     Vector3 RandomPos()
@@ -29,7 +34,7 @@ public class ItemSpawnerManager : MonoBehaviour
 
     IEnumerator SpawnItem()
     {
-        while (true)
+        while (!GameManager._Inst._isGameOver)
         {
             yield return new WaitForSeconds(_spawnDelay);
             GameObject item = Instantiate(_prefabs[Random.Range(0, _prefabs.Length)]);
@@ -41,7 +46,7 @@ public class ItemSpawnerManager : MonoBehaviour
 
     IEnumerator SpawnCoin()
     {
-        while (true)
+        while (!GameManager._Inst._isGameOver)
         {
             yield return new WaitForSeconds(_spawnCoinDelay);
             GameObject item = Instantiate(_prefabCoin);

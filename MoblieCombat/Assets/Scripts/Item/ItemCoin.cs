@@ -8,7 +8,7 @@ public class ItemCoin : ItemBase
 
     protected override void OnEffect(Collider other)
     {
-        
+        GameManager._Inst.CoinUp(10);   
     }
 
     // Update is called once per frame

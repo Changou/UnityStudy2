@@ -24,9 +24,9 @@ public class ObstacleBase : MonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        JetHealth jet = other.GetComponent<JetHealth>();
+        JetPlane jet = other.GetComponent<JetPlane>();
 
-        if(jet != null)
+        if(jet != null && !jet._onInvibility)
         {
             jet.Damage(_obDamage);
         }
