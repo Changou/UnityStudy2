@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,36 +8,19 @@ using UnityEngine.UI;
 public class FadeInOut : MonoBehaviour
 {
     [SerializeField] Image _fade;
+    [SerializeField] DOTweenAnimation _anim;
 
     public void FadeIn()
     {
-        if(_fade.color.a > 0)
-            StartCoroutine(FadeInCor());
+        _anim.DOPlayById("FadeIn");
     }
-    IEnumerator FadeInCor()
-    {
-        while(_fade.color.a > 0)
-        {
-            Color fade = _fade.color;
-            --fade.a; 
-            _fade.color = fade;
-            yield return null;
-        }
-    }
+
     public void FadeOut()
     {
-        if (_fade.color.a < 255)
-            StartCoroutine(FadeOutCor());
+        _anim.DOPlayById("FadeOut");
     }
-    IEnumerator FadeOutCor()
+    public void NextScene()
     {
-        while (_fade.color.a < 255)
-        {
-            Color fade = _fade.color;
-            ++fade.a;
-            _fade.color = fade;
-            yield return null;
-        }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

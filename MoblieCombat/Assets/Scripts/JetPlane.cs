@@ -53,6 +53,7 @@ public class JetPlane : JetHealth
         {
             GameManager._Inst.GameClear();
         }
+        UIManager._Inst.UpdateDist(transform.position.z - GameManager._Inst._startJetPos);
     }
 
     // Update is called once per frame

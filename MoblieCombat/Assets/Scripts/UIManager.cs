@@ -29,10 +29,16 @@ public class UIManager : MonoBehaviour
     [SerializeField] Text _coinT;
     [SerializeField] Text _hp;
     [SerializeField] Text _speed;
+    [SerializeField] Text _dist;
     
     private void Start()
     {
         GameManager._Inst.StartGameFunc += () => Show_Only(UI.GAME); 
+    }
+
+    public void UpdateDist(float dist)
+    {
+        _dist.text = "목표거리 : " + (int)dist + "/" + (int)GameManager._Inst._targetDist;
     }
 
     public void UpdateCoin(int coin)
@@ -55,7 +61,7 @@ public class UIManager : MonoBehaviour
         _uis[(int)ui].SetActive(true);
     }
 
-    void AllHide()
+    public void AllHide()
     {
         foreach (GameObject ui in _uis)
         {

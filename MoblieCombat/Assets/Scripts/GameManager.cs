@@ -32,9 +32,10 @@ public class GameManager : MonoBehaviour
         if (DataCentral._Inst._isGameClear)
         {
             _jet.GetComponent<DOTweenAnimation>().DOPlay();
-            UIManager._Inst.Show_Only(UIManager.UI.GAME);
+            UIManager._Inst.AllHide();
         }
         _targetDist = _defaultTargetDist + (500 * (DataCentral._Inst._lv - 1));
+        
         UIManager._Inst.FadeIn();
     }
 
