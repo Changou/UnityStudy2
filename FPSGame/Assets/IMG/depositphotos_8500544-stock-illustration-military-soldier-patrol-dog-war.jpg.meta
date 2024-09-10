@@ -1,0 +1,391 @@
+fileFormatVersion: 2
+guid: ba6676cc6a1e19e41ac026ac67b21dc6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 682.6666
+        width: 256
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3600e6272750cc149bccb459dd0fd9e8
+      internalID: -958239115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 682.6666
+        width: 256
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240c0bc2207b15947870124eafd2e7f6
+      internalID: 1367910537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 682.6666
+        width: 256
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 316f0a273259f4945b36e4f37eba656f
+      internalID: 43138906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 682.6666
+        width: 256
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0962400e5f69d3438efd428766a140e
+      internalID: 1623378530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 341.66666
+        width: 256
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79f54e039d55ae44b8dd0ae28318f650
+      internalID: 1940563061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 341.66666
+        width: 256
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be02b0fcc30fcc4990bc58c24a2234f
+      internalID: 1752407810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_6
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 341.66666
+        width: 256
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7047494c3e08341b50680b6507c566
+      internalID: -2015971179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_7
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 341.66666
+        width: 256
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 683bd70165a36a14aa7fbd7ef22579ea
+      internalID: 489728453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.6666565
+        width: 256
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf65a88c35114b48ad9ba0b1c1161b2
+      internalID: -1409145668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0.6666565
+        width: 256
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd68e36780e6d22468ed37e1b7ee2a63
+      internalID: -1456313666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0.6666565
+        width: 256
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29b4292b15380844ab56f926f2340b55
+      internalID: -1289129298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_11
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0.6666565
+        width: 256
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdaef1041a04a584f827c9426b82497a
+      internalID: 1768279384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 589695f21e8982047b38e9fb85b47275
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_0: -958239115
+      depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_1: 1367910537
+      depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_10: -1289129298
+      depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_11: 1768279384
+      depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_2: 43138906
+      depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_3: 1623378530
+      depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_4: 1940563061
+      depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_5: 1752407810
+      depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_6: -2015971179
+      depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_7: 489728453
+      depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_8: -1409145668
+      depositphotos_8500544-stock-illustration-military-soldier-patrol-dog-war_9: -1456313666
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
