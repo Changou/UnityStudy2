@@ -15,6 +15,12 @@ public class Player : MonoBehaviour
     float _power;
 
     // Update is called once per frame
+
+    private void Start()
+    {
+        GameManager._Inst._GameStart += () => NewBall();
+    }
+
     void Update()
     {
         if (_ball != null)
@@ -38,17 +44,22 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        if(_spawnPoint.childCount == 0)
-        {
-            NewBall();
-        }
     }
 
     void Shoot()
     {
         Rigidbody rb = _ball.GetComponent<Rigidbody>();
         rb.isKinematic = false;
-        rb.AddForce((_dir.normalized + _ball.transform.up) * _power);
+        _ball.transform.SetParent(null);
+        rb.AddRelativeForce((_dir.normalized + _ball.transform.up) * (_power - 150));
+        _ball = null;
+        StartCoroutine(NewDelay());
+    }
+
+    IEnumerator NewDelay()
+    {
+        yield return new WaitForSeconds(1);
+        NewBall();
     }
 
     void NewBall()
