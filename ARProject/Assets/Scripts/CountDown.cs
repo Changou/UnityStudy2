@@ -7,6 +7,7 @@ public class CountDown : MonoBehaviour
 {
     [SerializeField] Text _timeText;
     public float _time;
+    public float _defalutTime;
 
     private void Awake()
     {
@@ -16,7 +17,11 @@ public class CountDown : MonoBehaviour
     private void Start()
     {
         _timeText.text = _time.ToString("00") + " : 00";
+       
+        _time = Mathf.Round(_time);
+
         _time *= 60f;
+        _defalutTime = _time;
     }
 
     IEnumerator TimeCount()

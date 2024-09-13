@@ -55,12 +55,22 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         _isGameOver = true;
+
+        _fire.Explosion();
         UIManager._Inst.Only_Show(UIManager.UI.OVER);
     }
 
+    [SerializeField] Text _resultText;
+    [SerializeField] FireWorkManager _fire;
     void GameClear()
     {
         _isGameOver = true;
+        
+        float result = _countDown._defalutTime - Mathf.Floor(_countDown._time);
+        _resultText.text = ((int)(result / 60)).ToString("00") + " : "
+            + ((int)(result % 60)).ToString("00");
+
+        _fire.StartFireWork();
         UIManager._Inst.Only_Show(UIManager.UI.CLEAR);
     }
 

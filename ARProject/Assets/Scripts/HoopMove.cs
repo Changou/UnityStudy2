@@ -16,8 +16,30 @@ public class HoopMove : MonoBehaviour
         {
             GameManager._Inst._GameStart += () =>
             {
-                _dotween.DORestartById(_DotWeenId[Random.Range(0, _DotWeenId.Length)]);
+                if(Random.Range(0,2) == 0)
+                    StartCoroutine(RandomPosition());
+                else
+                    _dotween.DORestartById(_DotWeenId[Random.Range(0, _DotWeenId.Length)]);
             };
+        }
+    }
+
+    IEnumerator RandomPosition()
+    {
+        while (!GameManager._Inst._isGameOver)
+        {
+
+            int y = Random.Range(-5, 5);
+            int x = Random.Range(-5, 5);
+
+            int rot = Random.Range(0, 360);
+
+            transform.position = new Vector3(x, y, 0);
+            transform.rotation = Quaternion.Euler(0, rot, 0);
+
+            yield return new WaitForSeconds(7f);
+
+            yield return null;
         }
     }
 }
