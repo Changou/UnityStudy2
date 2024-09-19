@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - lb_groundTarget
+  - lb_perchTarget
+  - lb_bird
+  - SlingOn
   layers:
   - Default
   - TransparentFX
