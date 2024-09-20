@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour
 
     [Header("ÆøÅº")]
     [SerializeField] GameObject _prefab;
-    [SerializeField] float _bombDelay;
+    [SerializeField] public float _bombDelay;
     [SerializeField] float _bombPosX;
     [SerializeField] float _bombPosY;
     [SerializeField] float _bombPosZ;

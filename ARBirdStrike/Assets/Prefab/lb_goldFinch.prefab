@@ -1617,7 +1617,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: a8d1ed9db4472cd41b1421b6d053ae02, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -1685,3 +1685,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5079b5175df76f642b773824709f7112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frequency: 3.42
+  waveHeight: 0.01
+  _style: 0

@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int _targetBird;
     [SerializeField] BirdCount _birdCount;
 
+    [SerializeField] ParticleManager _particle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,23 +40,28 @@ public class GameManager : MonoBehaviour
     {
         _IsGameOver = false;
         _UI.Show_Only(UIManager.UI.GAME);
+        _particle.ParticleOn(ParticleManager.TYPE.START);
         _startGame();
     }
 
+    [SerializeField] SpawnManager _spawn;
+
     public void DownDelay()
     {
-
+        _spawn._bombDelay -= 0.5f;
     }
 
     public void GameClear()
     {
         _IsGameOver = true;
+        _particle.ParticleOn(ParticleManager.TYPE.CLEAR);
         _UI.Show_Only(UIManager.UI.CLEAR);
     }
 
     public void GameOver()
     {
         _IsGameOver = true;
+        _particle.ParticleOn(ParticleManager.TYPE.OVER);
         _UI.Show_Only(UIManager.UI.OVER);
     }
 }
