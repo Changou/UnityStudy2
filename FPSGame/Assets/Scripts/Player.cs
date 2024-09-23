@@ -169,17 +169,19 @@ public class Player : MonoBehaviour
         PlayerMove();
     }
 
+    bool _isJump = false;
+
     void BowCheck()
     {
-        if (Input.acceleration.x > _prevAccel + 0.2f && _rb.velocity.y <= 0.1f && !_isBowDown)
-        //if(Input.GetKeyDown(KeyCode.S) &&_rb.velocity.y <= 0.1f &&!_isBowDown)
+        //if (Input.acceleration.x > _prevAccel + 0.2f && _rb.velocity.y <= 0.1f && !_isBowDown)
+        if(Input.GetKeyDown(KeyCode.S) &&_rb.velocity.y <= 0.1f &&!_isBowDown)
         {
             _playerBow.DORestartById("Down");
             _state = STATE.LOW;
             _isBowDown = true;
         }
         else if (Input.acceleration.x  < _prevAccel - 0.2f && _rb.velocity.y <= 0.1f)
-        //if (Input.GetKeyDown(KeyCode.Space) && _rb.velocity.y <= 0.1f) 
+        //else if (Input.GetKeyDown(KeyCode.Space) && _rb.velocity.y <= 0.1f) 
         {
             if (_isBowDown)
             {
@@ -190,11 +192,16 @@ public class Player : MonoBehaviour
             }
             _state = STATE.JUMP;
             _rb.AddForce(Vector3.up * _jumpPower);
+            _isJump = true;
         }
 
-        if(_rb.velocity.y <= 0.1f)
+        RaycastHit hit;
+
+        Debug.DrawRay(transform.position, Vector3.down , Color.red);
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1f, LayerMask.GetMask("Ground")) && _isJump)
         {
             _state = STATE.UP;
+            _isJump = false;
         }
 
         _stateui.SetState(_state);
