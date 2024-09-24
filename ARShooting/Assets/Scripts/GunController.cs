@@ -2,12 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GUN
+{
+    PISTOL,
+    RIFLE,
+    SHOTGUN,
+
+    MAX
+}
+
 public class GunController : MonoBehaviour
 {
+    [SerializeField] GUN _gunType;
+
     public GameObject[] _gunBody;
     public Color32[] _colors;
 
     Material[] _gunMats;
+
+    int _colorIndex = 0;
+    int _scopeIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +38,78 @@ public class GunController : MonoBehaviour
 
     public void ChangeColor(int num)
     {
+        _colorIndex = num;
         for(int idx = 0; idx<_gunMats.Length; ++idx)
         {
             _gunMats[idx].color = _colors[num];
         }
+    }
+
+    [Header("회전 속도"), SerializeField]
+    float _rotSpeed = 0.1f;
+
+    private void Update()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Moved)
+            {
+                Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+        
+                RaycastHit hitInfo;
+
+                int layerMask = 1 << LayerMask.NameToLayer("Gun");
+        
+                if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, layerMask))
+                {
+                    Vector3 deltaPos = touch.deltaPosition;
+                    transform.Rotate(Vector3.up, deltaPos.x * -1f * _rotSpeed);
+                }
+            }
+        }
+    }
+
+    [Header("스코프"), SerializeField]
+    GameObject[] _prefabsScope;
+    [SerializeField] Transform _ScopePos;
+
+    public void SetScope(int num)
+    {
+        if(_ScopePos.childCount != 0)
+        {
+            for(int i = 0; i< _ScopePos.childCount; i++)
+            {
+                Destroy(_ScopePos.GetChild(i).gameObject);
+            }
+        }
+
+        _scopeIndex = num;
+
+        if (num == 0) return;
+
+        GameObject scope = Instantiate(_prefabsScope[num - 1], _ScopePos);
+    }
+
+    public void SelectGun()
+    {
+        //총기 저장
+        PlayerPrefs.SetInt("Gun", (int)_gunType);
+
+        //컬러 저장
+        PlayerPrefs.SetFloat("ColorR", _colors[_colorIndex].r);
+        PlayerPrefs.SetFloat("ColorG", _colors[_colorIndex].g);
+        PlayerPrefs.SetFloat("ColorB", _colors[_colorIndex].b);
+
+        //스코프 저장
+        PlayerPrefs.SetInt("Scope", _scopeIndex);
+
+        ////저장 확인
+        //Debug.Log(PlayerPrefs.GetInt("Gun"));
+        //Debug.Log("RGB(" 
+        //    + PlayerPrefs.GetFloat("ColorR") + ", "
+        //    + PlayerPrefs.GetFloat("ColorG") + ", "
+        //    + PlayerPrefs.GetFloat("ColorB") + ")");
+        //Debug.Log(PlayerPrefs.GetInt("Scope"));
     }
 }

@@ -27,7 +27,7 @@ public class CarControllerEx : CarController
                 //  -   https://dallcom-forever2620.tistory.com/18
 
                 int layerMask = 1 << LayerMask.NameToLayer("MyCar");
-
+                Debug.Log(layerMask);
                 if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, layerMask))
                 {
                     //  터치 이동량 구하기..

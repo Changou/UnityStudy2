@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ARShooter - Menu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/ARShooter - Game.unity
+    guid: 31a17c600db8a6c48b7a753f4c22781d
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: fd833f93194f39e4d91ae2f5dd65c3db, type: 2}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: a397efddb708e3246947fa4159377b00, type: 2}
