@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &975862434291205015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6301890089727642831}
+  m_Layer: 6
+  m_Name: ShotPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6301890089727642831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975862434291205015}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.4788}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2644135805791554014}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1237916701975615945
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,6 +43,7 @@ GameObject:
   - component: {fileID: 7817903387877904418}
   - component: {fileID: 8651050023150998735}
   - component: {fileID: 3946824076723990892}
+  - component: {fileID: 1858714498526316787}
   m_Layer: 6
   m_Name: Bennelli_M4(Game)
   m_TagString: Untagged
@@ -27,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237916701975615945}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0.9990483, z: -0.043619405, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -35,8 +67,9 @@ Transform:
   - {fileID: 8247514567898848574}
   - {fileID: 8734694621654130168}
   - {fileID: 7177915317609790795}
+  - {fileID: 6301890089727642831}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 5, y: 180, z: 0}
 --- !u!33 &7817903387877904418
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -109,6 +142,34 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: bf2593fe0c804b84688e307cfb1ddfae, type: 3}
+--- !u!114 &1858714498526316787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237916701975615945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c197c9e412c888c428b52014263e8e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gunBody:
+  - {fileID: 1237916701975615945}
+  _shotPos: {fileID: 6301890089727642831}
+  _pow: 3
+  _shotDelay: 0.5
+  _magazine: 9
+  _reload: 3
+  _bulletCnt: 15
+  _gunRange: 2.5
+  _linePrefab: {fileID: 908281137689706939, guid: 23abe13b27d2a9e4a98cf777f51a9185, type: 3}
+  _isShot: 1
+  _currentMagazine: 0
+  _currentBullet: 0
+  _radiation: 3
+  _shotGunDelay: 1
+  _range: 0.15
 --- !u!1 &2429101816426128750
 GameObject:
   m_ObjectHideFlags: 0

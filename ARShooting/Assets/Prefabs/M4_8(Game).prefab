@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4648895766264463515}
   - component: {fileID: 2459508046692004286}
   - component: {fileID: 8412457733951135144}
+  - component: {fileID: 1846939409691226903}
   m_Layer: 6
   m_Name: M4_8(Game)
   m_TagString: Untagged
@@ -38,6 +39,7 @@ Transform:
   - {fileID: 3299238826674658040}
   - {fileID: 6794404313729519088}
   - {fileID: 7201660799626790460}
+  - {fileID: 1114886144396116249}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &4648895766264463515
@@ -112,6 +114,68 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: c7741850eebe1df4ea75a80275b16311, type: 3}
+--- !u!114 &1846939409691226903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3044585301981382332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3d6c6a70d6f95499744ab6dfd1b787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gunBody:
+  - {fileID: 3044585301981382332}
+  - {fileID: 4991651398551762647}
+  - {fileID: 7745977401894604912}
+  - {fileID: 7223044771338439225}
+  - {fileID: 6917737954328863280}
+  - {fileID: 4834500236131423008}
+  _shotPos: {fileID: 1114886144396116249}
+  _pow: 1
+  _shotDelay: 0.1
+  _magazine: 10
+  _reload: 2
+  _bulletCnt: 20
+  _gunRange: 5
+  _linePrefab: {fileID: 908281137689706939, guid: 23abe13b27d2a9e4a98cf777f51a9185, type: 3}
+  _isShot: 1
+  _currentMagazine: 0
+  _currentBullet: 0
+  _rifleDelay: 0.5
+--- !u!1 &3466852725033339353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1114886144396116249}
+  m_Layer: 6
+  m_Name: ShotPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1114886144396116249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3466852725033339353}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0.0574, z: -0.3387}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 897518033499274487}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &4834500236131423008
 GameObject:
   m_ObjectHideFlags: 0

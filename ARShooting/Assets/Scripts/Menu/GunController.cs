@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public enum GUN
 {
     PISTOL,
@@ -100,16 +100,11 @@ public class GunController : MonoBehaviour
         PlayerPrefs.SetFloat("ColorR", _colors[_colorIndex].r);
         PlayerPrefs.SetFloat("ColorG", _colors[_colorIndex].g);
         PlayerPrefs.SetFloat("ColorB", _colors[_colorIndex].b);
+        PlayerPrefs.SetFloat("ColorA", _colors[_colorIndex].a);
 
         //스코프 저장
         PlayerPrefs.SetInt("Scope", _scopeIndex);
 
-        ////저장 확인
-        //Debug.Log(PlayerPrefs.GetInt("Gun"));
-        //Debug.Log("RGB(" 
-        //    + PlayerPrefs.GetFloat("ColorR") + ", "
-        //    + PlayerPrefs.GetFloat("ColorG") + ", "
-        //    + PlayerPrefs.GetFloat("ColorB") + ")");
-        //Debug.Log(PlayerPrefs.GetInt("Scope"));
+        SceneManager.LoadScene(1);
     }
 }
