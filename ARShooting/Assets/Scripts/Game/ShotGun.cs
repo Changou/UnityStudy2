@@ -54,6 +54,8 @@ public class ShotGun : Gun2
         endPos.y += Random.Range(-_range, _range);
         line.SetPosition(1, endPos);
 
+        RayShot(endPos);
+
         while (line.startColor.a > 0)
         {
             Color colorS = line.startColor;
@@ -65,6 +67,25 @@ public class ShotGun : Gun2
             yield return null;
         }
         Destroy(shotLine);
+    }
+    void RayShot(Vector3 pos)
+    {
+        Vector3 dir = pos - _shotPos.position;
+
+        Debug.DrawRay(_shotPos.position, dir.normalized * _gunRange);
+        Ray ray = new Ray(_shotPos.position, dir.normalized);
+
+        RaycastHit hitInfo;
+        int layerMask = 1 << LayerMask.NameToLayer("Monster");
+
+        if (Physics.Raycast(ray, out hitInfo, _gunRange, layerMask))
+        {
+            IDamage target = hitInfo.collider.GetComponent<IDamage>();
+            if (target != null)
+            {
+                target.Damage(_pow);
+            }
+        }
     }
 
     IEnumerator Delay(float time, int bullet)

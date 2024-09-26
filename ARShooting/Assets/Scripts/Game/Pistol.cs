@@ -43,6 +43,8 @@ public class Pistol : Gun2
         
         line.SetPosition(1, _shotPos.position + _shotPos.forward * _gunRange);
 
+        RayShot();
+   
         while(line.startColor.a > 0)
         {
             Color colorS = line.startColor;
@@ -55,6 +57,25 @@ public class Pistol : Gun2
         }
         Destroy(shotLine);
     }
+
+    void RayShot()
+    {
+        Debug.DrawRay(_shotPos.position, _shotPos.forward * _gunRange);
+        Ray ray = new Ray(_shotPos.position, _shotPos.forward);
+
+        RaycastHit hitInfo;
+        int layerMask = 1 << LayerMask.NameToLayer("Monster");
+
+        if (Physics.Raycast(ray, out hitInfo, _gunRange, layerMask))
+        {
+            IDamage target = hitInfo.collider.GetComponentInParent<IDamage>();
+            if(target != null)
+            {
+                target.Damage(_pow);
+            }
+        }
+    }
+
     IEnumerator Delay(float time, int bullet) 
     {
         _isShot = false;

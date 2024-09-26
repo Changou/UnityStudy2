@@ -40,5 +40,16 @@ public class GameManager : MonoBehaviour
             GameObject scope = Instantiate(_scope[scopeIndex - 1], gun.transform.Find("ScopePosition"));
         }
     }
-    
+
+    [Header("보스 등장")]
+    [SerializeField] int _bossCnt;
+    [SerializeField] SpawnManager _spawn;
+
+    public void MiddleDie()
+    {
+        if(++_bossCnt == 2)
+        {
+            _spawn.SpawnBoss();
+        }
+    }
 }
