@@ -14,9 +14,15 @@ public enum TYPE
     MAX
 }
 
+public enum EAR
+{
+    LEFT, RIGHT, MAX
+}
+
 public class UI_Manager : MonoBehaviour
 {
     [SerializeField] public TYPE _currentType;
+    [SerializeField] public EAR _currentEar;
 
     public ARFaceManager _arfaceManager;
 
