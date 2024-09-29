@@ -16,7 +16,7 @@ public enum TYPE
 
 public enum EAR
 {
-    LEFT, RIGHT, MAX
+    RIGHT,LEFT, MAX
 }
 
 public class UI_Manager : MonoBehaviour
@@ -35,20 +35,29 @@ public class UI_Manager : MonoBehaviour
         {
             if (face.trackingState == TrackingState.Tracking)
             {
+                Transform accTrans = face.transform.GetChild((int)_currentType);
+
                 if (_currentType == TYPE.EARRING)
                 {
-
-                }
-                else
-                {
-                    if (face.transform.GetChild((int)_currentType).GetChild(num).gameObject.activeSelf)
+                    if (accTrans.GetChild((int)_currentEar).GetChild(num).gameObject.activeSelf)
                     {
-                        face.transform.GetChild((int)_currentType).GetChild(num).gameObject.SetActive(false);
+                        accTrans.GetChild(num).gameObject.SetActive(false);
                         return;
                     }
 
-                    AllHide(face.transform.GetChild((int)_currentType));
-                    face.transform.GetChild((int)_currentType).GetChild(num).gameObject.SetActive(true);
+                    AllHide(accTrans.GetChild((int)_currentEar));
+                    accTrans.GetChild((int)_currentEar).GetChild(num).gameObject.SetActive(true);
+                }
+                else
+                {
+                    if (accTrans.GetChild(num).gameObject.activeSelf)
+                    {
+                        accTrans.GetChild(num).gameObject.SetActive(false);
+                        return;
+                    }
+
+                    AllHide(accTrans);
+                    accTrans.GetChild(num).gameObject.SetActive(true);
                 }
             }
         }
