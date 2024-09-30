@@ -26,15 +26,17 @@ public class UI_Manager : MonoBehaviour
 
     public ARFaceManager _arfaceManager;
 
-    [SerializeField] Dropdown _dropType;
-    [SerializeField] Dropdown _dropDir;
+    [Header("ÆÄÆ¼Å¬"), SerializeField] ParticleSystem[] _particles;
+    [SerializeField] float _particleOffset;
 
     public void OnToggle_Mask(int num)
     {
+        Transform pos = transform;
         foreach (ARFace face in _arfaceManager.trackables)
         {
             if (face.trackingState == TrackingState.Tracking)
             {
+                pos = face.transform;
                 Transform accTrans = face.transform.GetChild((int)_currentType);
 
                 if (_currentType == TYPE.EARRING)
@@ -61,6 +63,20 @@ public class UI_Manager : MonoBehaviour
                 }
             }
         }
+        ParticleOn(pos);
+    }
+
+
+    void ParticleOn(Transform position)
+    {
+        GameObject paritcle =
+            Instantiate(_particles[Random.Range(0, _particles.Length)].gameObject, position);
+        Vector3 pos = Vector3.zero;
+        pos.z = _particleOffset;
+        paritcle.transform.localPosition = pos;
+
+        Vector3 scale = new Vector3(0.1f, 0.1f, 0.1f);
+        paritcle.transform.localScale = scale;
     }
 
     void AllHide(Transform obj)
