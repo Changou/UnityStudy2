@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
@@ -28,6 +29,11 @@ public class UI_Manager : MonoBehaviour
 
     [Header("파티클"), SerializeField] ParticleSystem[] _particles;
     [SerializeField] float _particleOffset;
+
+    private void Start()
+    {
+        SetFaceMateiral((int)FACE_TYPE.IMAGE);
+    }
 
     public void OnToggle_Mask(int num)
     {
@@ -66,8 +72,58 @@ public class UI_Manager : MonoBehaviour
         ParticleOn(pos);
     }
 
+    [Header("얼굴 교체")]
+    [SerializeField] FaceChanger _faceChanger;
+    [SerializeField] Transform _face;
 
-    void ParticleOn(Transform position)
+    public void SetFaceMateiral(int num)
+    {
+        SetActiveObject(num);
+
+        _faceChanger._matType = (FACE_TYPE)num;
+
+        _faceChanger.ChangeFace(_faceChanger._mediaDrop[num].value);
+    }
+
+    [SerializeField] AccessManager _accManager; 
+
+    public void SetClear()
+    {
+        foreach (ARFace face in _arfaceManager.trackables)
+        {
+            if (face.trackingState == TrackingState.Tracking)
+            {
+                for(int i = 0; i < face.transform.childCount; i++)
+                {
+                    AllHide(face.transform.GetChild(i));
+                }
+            }
+        }
+        _accManager.ResetMenu();
+
+        foreach(Dropdown drop in _faceChanger._mediaDrop)
+        {
+            drop.value = 0;
+        }
+
+        SetFaceMateiral((int)FACE_TYPE.IMAGE);
+    }
+
+    public void SetActiveObject(int num)
+    {
+        for (int i = 0; i < _face.childCount; i++)
+        {
+            if (i == num)
+            {
+                _face.GetChild(i).gameObject.SetActive(true);
+                continue;
+            }
+            _face.GetChild(i).gameObject.SetActive(false);
+        }
+    }
+
+
+    public void ParticleOn(Transform position)
     {
         GameObject paritcle =
             Instantiate(_particles[Random.Range(0, _particles.Length)].gameObject, position);

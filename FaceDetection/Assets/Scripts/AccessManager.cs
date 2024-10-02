@@ -19,6 +19,12 @@ public class AccessManager : MonoBehaviour
         _dropLR.onValueChanged.AddListener(delegate { SetEarring(_dropLR.value); });
     }
 
+    public void ResetMenu()
+    {
+        _droptype.value = 0;
+        _dropLR.value = 0;
+    }
+
     void SetEarring(int option)
     {
         _uiM._currentEar = (EAR)option;
