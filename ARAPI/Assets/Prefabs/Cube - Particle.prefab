@@ -197,6 +197,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: d205bba4d197a5f45a64abfcc6123c20, type: 3}
+      propertyPath: VelocityModule.x.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: d205bba4d197a5f45a64abfcc6123c20, type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: d205bba4d197a5f45a64abfcc6123c20, type: 3}
+      propertyPath: VelocityModule.z.scalar
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: d205bba4d197a5f45a64abfcc6123c20, type: 3}
       propertyPath: InitialModule.startRotationX.minMaxState
       value: 3
       objectReference: {fileID: 0}
@@ -206,6 +218,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800002, guid: d205bba4d197a5f45a64abfcc6123c20, type: 3}
       propertyPath: scalingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: d205bba4d197a5f45a64abfcc6123c20, type: 3}
+      propertyPath: VelocityModule.x.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: d205bba4d197a5f45a64abfcc6123c20, type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: d205bba4d197a5f45a64abfcc6123c20, type: 3}
+      propertyPath: VelocityModule.z.scalar
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: d205bba4d197a5f45a64abfcc6123c20, type: 3}
+      propertyPath: VelocityModule.x.minScalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: d205bba4d197a5f45a64abfcc6123c20, type: 3}
+      propertyPath: VelocityModule.z.minScalar
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19900000, guid: d205bba4d197a5f45a64abfcc6123c20, type: 3}
@@ -262,39 +294,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2fdab942587233e42ad5de42efdc56af, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2fdab942587233e42ad5de42efdc56af, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2fdab942587233e42ad5de42efdc56af, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2fdab942587233e42ad5de42efdc56af, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2fdab942587233e42ad5de42efdc56af, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2fdab942587233e42ad5de42efdc56af, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 2fdab942587233e42ad5de42efdc56af, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 2fdab942587233e42ad5de42efdc56af, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 2fdab942587233e42ad5de42efdc56af, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 2fdab942587233e42ad5de42efdc56af, type: 3}
       propertyPath: m_LocalPosition.x
@@ -390,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2631912c70108cb428af85f07d08b675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleFactor: 0.1
+  scaleFactor: 0.3
 --- !u!1001 &8446734519858424569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -409,27 +441,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7c687a4414095c349a8ec5ac5f3cccb2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7c687a4414095c349a8ec5ac5f3cccb2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7c687a4414095c349a8ec5ac5f3cccb2, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c687a4414095c349a8ec5ac5f3cccb2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c687a4414095c349a8ec5ac5f3cccb2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c687a4414095c349a8ec5ac5f3cccb2, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 7c687a4414095c349a8ec5ac5f3cccb2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -512,7 +544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2631912c70108cb428af85f07d08b675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleFactor: 0.1
+  scaleFactor: 0.3
 --- !u!4 &8446734519858819197 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 7c687a4414095c349a8ec5ac5f3cccb2, type: 3}

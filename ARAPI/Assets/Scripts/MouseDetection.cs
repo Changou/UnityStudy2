@@ -35,6 +35,8 @@ public class MouseDetection : MonoBehaviour
 
     MOUSE _mouse = MOUSE.UM;
 
+    [Header("감정 파티클"), SerializeField] EmotionParticle _ep;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,12 @@ public class MouseDetection : MonoBehaviour
 
         _mouseMiddle = Instantiate(_particle);
         _mouseMiddle.SetActive(false);
+
+        for (int i = 0; i < _ep._IndexCnt; i++)
+        {
+            GameObject go = Instantiate(_cubePref);
+            _ep.AddParticleObj(go);
+        }
 
         _arFaceManager.facesChanged += OnDetectFaceAll;
 
@@ -67,15 +75,28 @@ public class MouseDetection : MonoBehaviour
 
                 vertPos = args.updated[0].transform.TransformPoint(vertPos);
 
-                _faceCubes[i].SetActive(true);
+                //_faceCubes[i].SetActive(true);
                 _faceCubes[i].transform.position = vertPos;
+            }
+
+            int num = 0;
+            for (int i = 0; i < _ep._emotions.Count; i++) 
+            {
+                for (int j = 0; j < _ep._emotions[i].Length; j++)
+                {
+                    Vector3 vertPos = args.updated[0].vertices[_ep._emotions[i][j]];
+
+                    vertPos = args.updated[0].transform.TransformPoint(vertPos);
+
+                    _ep._particleOBJ[num++].transform.position = vertPos;
+                }
             }
             
             float udDist = Vector3.Distance(_faceCubes[0].transform.position, _faceCubes[1].transform.position) * 100;
             float lrDist = Vector3.Distance(_faceCubes[2].transform.position, _faceCubes[3].transform.position) * 100;
 
-            Debug.Log(" 입 상하 거리 :" + udDist);
-            Debug.Log(" 입 좌우 거리 :" + lrDist);
+            //Debug.Log(" 입 상하 거리 :" + udDist);
+            //Debug.Log(" 입 좌우 거리 :" + lrDist);
 
             MouseShape(udDist, lrDist);
             ParticleOn(_mouse);
