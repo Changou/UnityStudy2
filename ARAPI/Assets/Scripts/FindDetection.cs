@@ -230,6 +230,5 @@ public class FindDetection : MonoBehaviour
             //  큐브 비활성화..
             _faceCubes[0].SetActive(false);
         }
-
     }
 }

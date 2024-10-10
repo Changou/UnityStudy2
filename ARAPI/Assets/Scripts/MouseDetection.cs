@@ -111,7 +111,8 @@ public class MouseDetection : MonoBehaviour
         else if (args.removed.Count > 0)
         {
             //  큐브 비활성화..
-            _faceCubes[0].SetActive(false);
+            for(int i = 0;i < _faceCubes.Count; i++)
+                _faceCubes[i].SetActive(false);
             _mouseMiddle.SetActive(false);
             _ui.SetText("None");
         }
